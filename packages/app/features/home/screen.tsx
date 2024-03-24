@@ -9,7 +9,7 @@ import {
   useToastController,
   XStack,
   YStack,
-  Image
+  Image,
 } from '@my/ui'
 import { ChevronDown, ChevronUp } from '@tamagui/lucide-icons'
 import { useState } from 'react'
@@ -17,7 +17,7 @@ import { useLink } from 'solito/link'
 
 export function HomeScreen() {
   const linkProps = useLink({
-    href: 'https://base.party.app/party/0x48B40D6D56988bD25707609BD0FF42725300431E',
+    href: '',
   })
   const coinProps = useLink({
     href: 'https://base.party.app/party/0x48B40D6D56988bD25707609BD0FF42725300431E',
@@ -26,26 +26,47 @@ export function HomeScreen() {
   return (
     <YStack f={1} jc="center" ai="center" p="$4" gap="$4">
       <YStack gap="$4" bc="$background">
-        <Image source={{ uri:"bingbong.png", width:585, height: 400  }} alt="Bing Bong" />
+        <Image source={{ uri: 'bingbong.png', width: 585, height: 400 }} alt="Bing Bong" />
+        <XStack gap="$4" jc="center"ac="space-between" >
+          <Paragraph ta="center">
+            <Anchor
+              color="$color12"
+              href="https://base.party.app/party/0x48B40D6D56988bD25707609BD0FF42725300431E"
+              target="_blank"
+              marginRight={30}
+            >
+              <H1>$BINGBONG</H1>
+            </Anchor>
+            <Anchor
+              color="$color12"
+              href="https://base.party.app/party/0x48B40D6D56988bD25707609BD0FF42725300431E"
+              target="_blank"
+            >
+              <H1>BING BONG DAO</H1>
+            </Anchor>
+          </Paragraph>
+        </XStack>
         <H4 ta="center">STAND CLEAR OF THE CLOSING DOORS</H4>
-        <H1 ta="center">BING BONG </H1>
-        <Paragraph ta="center">
-          A testament to public infrastruture - mostly for fun
-        </Paragraph>
+        <Paragraph ta="center">A testament to public infrastruture - 95% fun</Paragraph>
+        <Paragraph ta="center">5% community driven NYC events</Paragraph>
 
+        <Separator />
         <Paragraph ta="center">
-          BING BONG, as made popular by sidetalk NYC{' '}
-          <Anchor color="$color12" href="https://www.youtube.com/watch?v=2-oCNXMsMvg" target="_blank">
-            in this video
+          as made popular by{' '}
+          <Anchor
+            color="$color12"
+            href="https://www.youtube.com/watch?v=2-oCNXMsMvg"
+            target="_blank"
+          >
+            sidetalk NYC
           </Anchor>
         </Paragraph>
       </YStack>
 
-      <XStack>
-        <Button {...linkProps}>DAO link</Button>
-        {/* <Button {...linkProps}>coin launch link</Button> */}
-      </XStack>
-
+      {/* <XStack> */}
+      {/* <Button {...linkProps}>DAO link</Button> */}
+      {/* <Button {...linkProps}>coin launch link</Button> */}
+      {/* </XStack> */}
     </YStack>
   )
 }
